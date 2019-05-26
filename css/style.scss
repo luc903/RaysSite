@@ -1,0 +1,148 @@
+
+@import "Variables";
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  outline: none;
+}
+
+.fader {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 1s opacity;
+  z-index: 1001;
+  pointer-events: none;
+  background-color: #ffffff;
+
+  &.video {
+    opacity: .8;
+  }
+}
+
+body.fade .fader {
+    opacity: 1;
+}
+
+body.video .fader {
+    background-color: #000000;
+    opacity: .8;
+}
+
+
+.home-container {
+  display: flex;
+
+  .home__happiness, .home__sadness {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: $headerFont;
+
+    h1 {
+      font-size: 12em;
+      flex: 0 1 auto;
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+
+  .home__happiness {
+    background-color: $happinessColor;
+    text-align: right;
+    display: flex;
+
+    .video-link {
+      box-shadow: 10px 5px 20px darken($happinessColor, 10%);
+      background-color: $sadnessColor;
+      color: #ffffff;
+    }
+  }
+
+  .home__sadness {
+    background-color: $sadnessColor;
+    color: white;
+    text-align: left;
+
+    .video-link {
+      box-shadow: 10px 5px 20px darken($sadnessColor, 10%);
+      background-color: $happinessColor;
+      color: black;
+    }
+  }
+
+  .video-link {
+    opacity: 0;
+    position: relative;
+    flex: 0 1 auto;
+    display: flex;;
+    height: 450px;
+    width: 400px;
+    background-color: white;
+    transition: opacity 1s, box-shadow 1s;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 6.5em;
+    text-align: center;
+    flex-direction: column;
+
+    & *{
+      flex: 0 1 auto;
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+}
+
+.video-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2002;
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+
+  video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: Translate(-50%, -50%);
+  }
+}
+
+body.video {
+  .video-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+body.load_content {
+  .video-link {
+    opacity: 1;
+  }
+
+  .fader {
+
+    background-color: #000000;
+  }
+}
+
+video {
+  display: none;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e55dac0e-d3aa-43e0-8123-fe06bd760c43" name="RaysSite" url="http://ec2-63-34-77-73.eu-west-1.compute.amazonaws.com">
+        <fileTransfer host="ec2-63-34-77-73.eu-west-1.compute.amazonaws.com" port="22" privateKey="D:\PersonalProjects\KeyPairs\RaysKeyPair.ppk" rootFolder="/var/www/html" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

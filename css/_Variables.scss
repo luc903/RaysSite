@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Amatic SC Regular'), local('AmaticSC-Regular'), url(../fonts/AmaticSC-Regular.ttf);
+}
+
+$happinessColor: #137421;
+$sadnessColor: #000;
+
+$hoverOffset: 40%;
+
+$headerFont: 'Amatic SC', cursive;
